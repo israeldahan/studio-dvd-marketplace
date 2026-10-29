@@ -24,6 +24,17 @@ scripts/run_jsx.sh scripts/dump_ai.jsx "/path/file.ai" "/path/out.txt"
 - סוגרים רק מה שהסקריפט פתח: `doc.close(SaveOptions.DONOTSAVECHANGES)`.
 - שומרים עותק בשם חדש: `doc.saveAs(new File(newPath))`.
 
+## ייצוא לתצוגה כשעובדים על מסמך שאינו הפעיל
+- `doc.exportFile()` מייצא תמיד את **המסמך הפעיל**, גם כשקוראים לו על מסמך אחר. ב-X2526 זה ייצא בטעות את X2527 של סשן אחר.
+- רינדור `.ai` עם `sips` מציג תוכן ישן (PDF compatibility). לא משתמשים בו לבדיקה אחרי שינוי.
+- מה שעובד בלי להחליף מסמך פעיל:
+```javascript
+var o = new ImageCaptureOptions(); o.resolution = 300; o.antiAliasing = true; o.transparency = false;
+doc.imageCapture(new File(out), [left, top, right, bottom] /* points */, o);
+```
+- לא מחליפים את `app.activeDocument` כשסשן אחר עובד ב-Illustrator.
+- ב-ExtendScript אין `Array.map`. כותבים לולאה רגילה.
+
 ## ייצוא לתצוגה
 ```javascript
 var o = new ExportOptionsPNG24(); o.artBoardClipping = true; o.horizontalScale = o.verticalScale = 150;
