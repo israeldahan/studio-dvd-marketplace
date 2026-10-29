@@ -1,0 +1,18 @@
+{
+  "name": "studio-dvd",
+  "owner": {
+    "name": "Studio DVD"
+  },
+  "metadata": {
+    "description": "כלים של סטודיו DVD לעבודה עם Claude Code",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "label-builder",
+      "source": "./plugins/label-builder",
+      "description": "בניית תווית לדגם חדש על שבלונת חיתוך: פתיחה, מפת אזורים לאישור, איתור חומרים ובניית תווית בסיס ב-Illustrator",
+      "version": "0.1.0"
+    }
+  ]
+}
