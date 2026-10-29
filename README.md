@@ -1,4 +1,4 @@
-# studio-dvd-plugins
+# studio-dvd-marketplace
 
 מרקטפלייס פרטי של סטודיו DVD לתוספים של Claude Code.
 
@@ -11,7 +11,7 @@
 ## התקנה מ-GitHub
 
 ```
-/plugin marketplace add <github-user>/studio-dvd-plugins
+/plugin marketplace add israeldahan/studio-dvd-marketplace
 /plugin install label-builder@studio-dvd
 ```
 
